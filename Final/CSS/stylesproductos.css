@@ -1,0 +1,602 @@
+/* Estilos generales del header */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* izquierda (logo) - centro (buscador) - derecha (nav) */
+    align-items: center;
+    padding: 10px 5%;
+    background: #4AB3E3;
+    color: white;
+    position: relative;
+    z-index: 100;
+    gap: 15px;
+}
+
+/* Logo y nombre de la empresa */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.company-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Contenedor del buscador */
+.search-container {
+    justify-self: center; /* centra el contenedor en la columna central */
+    width: 100%;
+    max-width: 650px; /* un poco más ancho que index, como solicitaste */
+    margin: 0; /* elimina márgenes laterales que pueden descentrar */
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 8px 15px; /* igual que en index */
+    border: none;
+    border-radius: 20px 0 0 20px; /* igual que en index */
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-form button {
+    padding: 0 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background: #2980b9;
+}
+
+/* Navegación derecha */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0; /* antes se usaba para flex, ya no es necesario */
+    justify-self: end; /* alinea a la derecha dentro de la tercera columna */
+}
+
+/* Botones de navegación */
+.nav-btn {
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Iconos de navegación (carrito y usuario) */
+.nav-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(233, 40, 40, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(172, 27, 27, 0.2);
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Contador del carrito */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Menú desplegable del usuario */
+.user-section {
+    position: relative;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    gap: 10px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.user-dropdown a:hover {
+    background: #f5f5f5;
+}
+
+
+/* Centrar el texto del Productos */
+.titulo-productos {
+    text-align: center; /* Centra el texto del título */  
+    margin: 20px 0; /* Añade un margen superior e inferior */
+    font-size: 2rem; /* Tamaño de fuente más grande para el título */
+    color: #4FC3F7; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente del título */
+    font-weight: bold; /* Hace el texto más grueso */
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas en pantallas grandes */
+    gap: 20px;
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    place-items: center;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Estilos del Footer */
+footer {
+    background: #4AB3E3;
+    color: white;
+    padding: 20px 15%;
+    font-family: Arial, sans-serif;
+    min-height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+}
+
+.telefono {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.enlace-footer {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.enlace-footer:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+.enlace-footer i {
+    width: 20px;
+    text-align: center;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 200px;
+}
+
+.icono-red {
+    color: white;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.icono-red:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.derechos {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Estilos para el Modal de Login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 450px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Ajustes para el formulario dentro del modal */
+.modal .login-box {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+}
+
+.modal .logo-container {
+    margin-bottom: 20px;
+}
+
+.modal .logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.modal h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* ==================================================
+   MEDIA QUERIES - DISEÑO RESPONSIVO
+   ================================================== */
+
+/* Tablets grandes (hasta 1024px) */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 3%;
+    }
+    
+    .search-container {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+    
+    .nav-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .banner {
+        height: 200px;
+    }
+}
+
+/* Tablets pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .footer-contenido {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 10px;
+    }
+    
+    .info-contacto, 
+    .redes-sociales, 
+    .enlaces-rapidos {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .modal-content {
+        margin: 15% 10px;
+        width: auto;
+    }
+}
+
+/* Móviles grandes (hasta 600px) */
+@media (max-width: 600px) {
+    .modal-content {
+        margin: 20% 10px;
+        width: 90%;
+    }
+    
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .product-image {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Móviles medianos (hasta 480px) */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .nav-right {
+        gap: 5px;
+        justify-content: space-around;
+    }
+    
+    .nav-btn {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .product-card {
+        padding: 10px;
+    }
+    
+    .product-title {
+        font-size: 1.1rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+    }
+    
+    .price {
+        font-size: 1.2rem;
+    }
+    
+    .banner {
+        height: 150px;
+    }
+    
+    .footer-contenido {
+        padding: 20px 5px;
+    }
+    
+    .redes-sociales a {
+        margin: 0 5px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Móviles pequeños (hasta 360px) */
+@media (max-width: 360px) {
+    .nav-btn {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .nav-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .product-card {
+        padding: 8px;
+    }
+    
+    .product-title {
+        font-size: 1rem;
+    }
+    
+    .product-description {
+        font-size: 0.8rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+    
+    .banner {
+        height: 120px;
+    }
+}
+
+/* Ajustes de orientación horizontal */
+@media (max-height: 480px) and (orientation: landscape) {
+    .modal-content {
+        margin: 5% 10%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Color de placeholder y de la X unificados */
+.search-form input::placeholder {
+    color: var(--placeholder-color, #888);
+}
+
+#productSearchInput {
+    padding-right: 40px;
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: none;
+    background: transparent; /* dentro del rectángulo, sin fondo propio */
+    color: var(--placeholder-color, #888); /* mismo color que el placeholder */
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* visible solo cuando hay texto */
+}
+
+.clear-search-btn:hover {
+    opacity: 0.8;
+}
